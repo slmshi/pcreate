@@ -1,5 +1,5 @@
 # pcreate
-All of the current apps that allow you to create texture packs are either old (ResourcePack Workbench last had a commit 5 years ago)
+All of the current apps that allow you to create minecraft texture packs are either old (ResourcePack Workbench last had a commit 5 years ago)
 or are unintuitive and require java to work
 
 So, using python and a more modern gui framework (ttkbootstrap) i desire
