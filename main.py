@@ -2,21 +2,15 @@ import json
 import os
 
 path = "1.8.9\\assets\\minecraft\\textures"
-nextlist = {
-    
-}
 
-def createjsonfiles(nextlist):
-    keys = list(nextlist.keys())
-    for i in keys:
-        with open(f"{i}.json", "w") as f:
-            json.dump(nextlist[i], f)
+pathes = list(os.walk(path))
+paths = []
 
-def searchpath(nextlist):
-    for i in os.listdir(path):
-        nextpath = f"{path}\\{i}"
-        nextlist[i] = os.listdir(nextpath)
-    return nextlist
+folders = []
+for i in pathes:
+    folders.append([i[0]])
+    with open(f"{i[0]}\\{os.path.basename(i[0])}.json", "w") as f:
+        json.dump(i[2], f)
 
-nextlist = searchpath(nextlist)
-createjsonfiles(nextlist, path)
+with open("dirs.json", "w") as f:
+    json.dump(folders, f)
